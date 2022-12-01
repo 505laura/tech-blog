@@ -29,7 +29,7 @@ Post.init(
             allowNull: false
         },
         tags: {
-            type: DataTypes.ENUM(),
+            type: DataTypes.ENUM(''),
         },
         views: {
             type: DataTypes.INTEGER,
