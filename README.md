@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/license-MIT-green)
 
-[Link to Deployed Application]()
+[Link to Deployed Application](https://laura505-tech-blog.herokuapp.com/)
 
 ## Description
 A CMS-style blog site for developers to publish blog posts sharing their thoughts and opinions on tech related topics.
