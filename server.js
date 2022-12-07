@@ -5,8 +5,8 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
-const { Post } = require('./models');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 
 const hbs = exphbs.create({ helpers });
 
@@ -38,11 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-app.get('/', (req, res) => {
-    res.render('home');
-});
+const {seedAll} = require('./seeds');
 
-
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: true }).then(async() => {
+    await seedAll();
     app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
 });
