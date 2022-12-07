@@ -28,9 +28,6 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        tags: {
-            type: DataTypes.ENUM(''),
-        },
         views: {
             type: DataTypes.INTEGER,
             defaultValue: 0
