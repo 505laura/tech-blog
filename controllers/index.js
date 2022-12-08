@@ -8,7 +8,7 @@ router.get('/', async(req, res) => {
     const posts = await Post.findAll({limit: 4})
         .then((posts) => posts.map((post) => post.dataValues));
     console.log(posts);
-    res.render('home', {posts});
+    res.render('home', {posts, logged_in: req.session.logged_in});
 });
 
 router.get('/dashboard', (req, res) => {
@@ -24,6 +24,11 @@ router.get('/signup', (req, res) => {
 router.get('/login', (req, res) => {
     console.log(req);
     res.render('login');
+});
+
+router.get('/explore', (req, res) => {
+    console.log(req);
+    res.render('explore');
 });
 
 module.exports = router;
