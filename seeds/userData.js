@@ -19,7 +19,6 @@ const generateUser = (role) => ({
     password: randomPassword(),
     username: randomUsername(),
     gender: randomGender(),
-    telephone: randomTelephone(),
     role
 })
 
@@ -29,7 +28,6 @@ const userData = [
         password: '16Gh#00l',
         username: 'amyslay123',
         gender: 'Female',
-        telephone: 0887590082,
         role: 'Admin'
     },
     ...Array(10).fill(0).map(() => generateUser('User'))

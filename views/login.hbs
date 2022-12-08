@@ -5,9 +5,9 @@
         <div class="max-w-md mx-auto px-8 rounded-lg text-center">
             <span class="text-sm text-gray-500 font-semibold uppercase">Log in</span>
             <h3 class="mb-8 text-3xl font-bold font-heading">Welcome back</h3>
-            <form action="#">
-                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="email" placeholder="E-mail address">
-                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="password" placeholder="Password">
+            <form action="#" id="login-form">
+                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="email" id="email-login" placeholder="E-mail address">
+                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="password" id="password-login" placeholder="Password">
                 <button class="w-full inline-block px-6 py-3 mb-4 text-sm text-white font-bold leading-loose bg-gray-500 hover:bg-gray-600 rounded transition duration-200">Get Started</button>
                 <a class="text-sm text-gray-500 hover:underline" href="#">Forgot password?</a>
                 <p class="text-sm text-gray-500 pt-2">
@@ -18,5 +18,7 @@
         </div>
     </div>
 </section>
+
+<script src="/js/login.js"></script>
 
 {{> footer}}
