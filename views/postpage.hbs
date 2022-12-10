@@ -1,8 +1,60 @@
 {{> header}}
 
-{{!-- For when you click on a specific post --}}
-<main>
+<!-- Post content -->
+<main class="bg-gray-50">
+    <section class="py-20">
+        <div class="container px-4 mx-auto">
+            <div class="max-w-2xl mx-auto mb-12">
+                <div class="text-center mb-6">
+                    <span class="text-base md:text-lg">
+                        <a class="text-blue-500 hover:underline" href="#">{{{category}}}</a>
+                        <span class="text-blueGray-400">{{{createdAt}}}</span>
+                    </span>
+                    <h2 class="text-4xl md:text-5xl my-2 font-bold font-heading">{{{title}}}</h2>
+                </div>
+                <div class="flex justify-center">
+                    <img class="w-12 h-12 object-cover rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                    <div class="pl-4">
+                        <p class="text-blueGray-500 mb-1">{{{user.dataValues.username}}}</p>
+                        <p class="text-xs text-blue-600 font-semibold">Author</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-8">
+                <img class="h-80 mx-auto mb-6 object-cover rounded" src="https://images.unsplash.com/photo-1603665330306-dd1a67e0cc4e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;h=300&amp;q=80&amp;blend=fe8484&amp;sat=-80&amp;blend-mode=multiply" alt="">
+                
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <p class="mb-6 leading-loose text-blueGray-400">{{{content}}}</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Comment section -->
+    <section class="bg-gray-50 py-8 lg:py-16">
+        <div class="max-w-2xl mx-auto px-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-lg lg:text-2xl font-bold text-gray-800">Comments</h2>
+            </div>
+            <form>
+                <div class="py-2 mb-3 bg-gray-50 rounded-lg rounded-t-lg border border-gray-200">
+                    <label for="comment" class="sr-only">Your comment</label>
+                    <textarea id="comment" rows="6"
+                    class="px-3 py-3 w-full text-sm text-gray-800 border-0 focus:ring-0 focus:outline-none"
+                    placeholder="Write a comment..." required></textarea>
+                </div>
+                <div class="flex justify-end mb-8">
+                    <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-teal-700 rounded-lg focus:ring-4 focus:ring-primary-200 hover:bg-teal-600">
+                        Cancel
+                    </button>
+                    <button type="submit" class="inline-flex items-center ml-2 py-2.5 px-4 text-xs font-medium text-center text-white bg-teal-700 rounded-lg focus:ring-4 focus:ring-primary-200 hover:bg-teal-600">
+                        Post comment
+                    </button>
+                </div>
+            </form>
+            {{> comment}}
+        </div>
+    </section>
 
-</main>
-
-{{> footer}}
+    
+    {{> footer}}
