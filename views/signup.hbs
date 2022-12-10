@@ -5,21 +5,21 @@
         <div class="max-w-md mx-auto px-8 rounded-lg text-center">
             <span class="text-sm text-gray-500 font-semibold uppercase">Sign Up</span>
             <h3 class="mb-8 text-3xl font-bold font-heading">Create new account</h3>
-            <form action="#">
-                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="text" placeholder="Username">
+            <form action="#" id="signup-form">
+                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="text" id="username-signup" placeholder="Username">
                 {{!-- TODO: fix 'gender' to show as placeholder text --}}
-                {{!-- <select class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" name="gender" placeholder="Gender">
+                {{!-- <select class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" name="gender" id="gender-signup" placeholder="Gender">
                     <option value="none">None</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
                 </select> --}}
-                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="email" placeholder="E-mail address">
-                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="password" placeholder="Password">
-                <label class="inline-block mb-4">
+                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="email" id="email-signup" placeholder="E-mail address">
+                <input class="w-full py-3 pl-3 mb-4 bg-white border rounded-lg" type="password" id="password-signup" placeholder="Password">
+                {{!-- <label class="inline-block mb-4">
                     <input class="mr-1" type="checkbox" name="terms" value="1">
                     <span class="text-sm text-gray-500">By signing up, you agree to our <a class="font-bold hover:underline" href="#">Terms, Data Policy</a> and <a class="font-bold hover:underline" href="#">Cookies Policy</a>.</span>
-                </label>
+                </label> --}}
                 <button class="w-full inline-block px-6 py-3 mb-4 text-sm text-white font-bold leading-loose bg-gray-500 hover:bg-gray-600 rounded transition duration-200">Sign Up</button>
             </form>
             <p class="text-sm text-gray-500">
@@ -29,5 +29,7 @@
         </div>
     </div>
 </section> 
+
+<script src="/js/signup.js"></script>
 
 {{> footer}}

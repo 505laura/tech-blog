@@ -20,10 +20,16 @@ router.get('/:id', async(req, res) => {
 
 router.post('/', async(req, res) => {
     try {
-        const {email, password, firstName, lastName, gender, telephone} = req.body;
-        const user = await User.create({email, password, firstName, lastName, gender, telephone});
+        const {email, password, username, gender} = req.body;
+        const user = await User.create({email, password, username, gender, role: 'User'});
         const id = user.getDataValue('id');
-        return res.json({user_id: id});
+
+        return req.session.save(() => {
+            req.session.user_id = id;
+            req.session.logged_in = true;
+            res.json({user_id: id});
+        });
+
     } catch(err) {
         console.error(err);
         return res.status(500).json({message: 'Something went wrong!'});
@@ -38,8 +44,8 @@ router.put('/:id', async(req, res) => {
     if (req.params.id !== req.session.user_id) { // User is not logged in as the user they want to update
         return res.status(403).json({message: 'Not for you.'});
     }
-    const {email, password, firstName, lastName, gender, telephone} = req.body;
-    await User.update({email, password, firstName, lastName, gender, telephone}, {where: {id: req.params.id}});
+    const {email, password, username} = req.body;
+    await User.update({email, password, username}, {where: {id: req.params.id}});
     res.json({success: true});
 });
 
