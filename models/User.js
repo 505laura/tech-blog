@@ -39,19 +39,12 @@ User.init(
             type: DataTypes.STRING,
             unique: true,
             validate: {
-                len: [3, 20],
-                msg: 'Must contain between 3 and 20 characters.'
+                len: {
+                    args: [3, 20],
+                    msg: 'Must contain between 3 and 20 characters.'
+                }
             },
             allowNull: false
-        },
-        gender: {
-            type: DataTypes.ENUM('Male', 'Female', 'Other', 'None'),
-            allowNull: false
-        },
-        telephone: {
-            // TODO: Add ability to add country code
-            type: DataTypes.INTEGER,
-            unique: true,
         },
         role: {
             type: DataTypes.ENUM('User', 'Mod', 'Admin'),
