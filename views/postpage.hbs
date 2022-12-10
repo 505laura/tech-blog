@@ -8,20 +8,16 @@
                 <div class="text-center mb-6">
                     <span class="text-base md:text-lg">
                         <a class="text-blue-500 hover:underline" href="#">{{{category}}}</a>
-                        <span class="text-blueGray-400">{{{createdAt}}}</span>
                     </span>
                     <h2 class="text-4xl md:text-5xl my-2 font-bold font-heading">{{{title}}}</h2>
                 </div>
-                <div class="flex justify-center">
-                    <img class="w-12 h-12 object-cover rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
-                    <div class="pl-4">
-                        <p class="text-blueGray-500 mb-1">{{{user.dataValues.username}}}</p>
-                        <p class="text-xs text-blue-600 font-semibold">Author</p>
-                    </div>
+                <div class="flex justify-center flex-col items-center">
+                        <p class="text-gray-400 mb-1">Written by {{{user.dataValues.username}}}</p>
+                        <span class="text-gray-400">{{{createdAt}}}</span>
                 </div>
             </div>
             <div class="mb-8">
-                <img class="h-80 mx-auto mb-6 object-cover rounded" src="https://images.unsplash.com/photo-1603665330306-dd1a67e0cc4e?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1050&amp;h=300&amp;q=80&amp;blend=fe8484&amp;sat=-80&amp;blend-mode=multiply" alt="">
+                <img class="h-80 mx-auto mb-6 object-cover rounded" src={{{image}}} alt="">
                 
             </div>
             <div class="max-w-2xl mx-auto">
@@ -52,7 +48,7 @@
                     </button>
                 </div>
             </form>
-            {{> comment}}
+            {{!-- {{> comment}} --}}
         </div>
     </section>
 
