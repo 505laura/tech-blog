@@ -22,20 +22,20 @@ const generateUser = (role) => ({
     role
 })
 
-const userData = [
-    {
+const userData = Array(10).fill(0).map(() => generateUser('User'));
+
+const seedUser = async() => {
+    await User.create(    {
         email: 'testuser@gmail.com',
         password: '16Gh#00l',
         username: 'amyslay123',
         gender: 'Female',
         role: 'Admin'
-    },
-    ...Array(10).fill(0).map(() => generateUser('User'))
-];
-
-const seedUser = () => User.bulkCreate(userData, {
-    individualHooks: true,
-});
+    })
+    await User.bulkCreate(userData, {
+        individualHooks: true,
+    });
+}
 
 module.exports = seedUser;
 

@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./node_modules/flowbite/**/*.js"
-],
+    './views/**/*.{html,js,hbs}',
+    './public/**/*.{html,js,hbs}',
+    './index.html',
+  ],
   theme: {
-    extend: {},
+    extend: {}
   },
   plugins: [
-    require('flowbite/plugin')
-]
+    require('@tailwindcss/line-clamp'),
+  ],
 }
